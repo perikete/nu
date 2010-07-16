@@ -21,7 +21,7 @@ namespace nu.core.Configuration
     {
         readonly ILogger _logger = Logger.GetLogger<FileBasedDefaultsConfiguration>();
 
-        public FileBasedDefaultsConfiguration(FileSystem fileSystem, NuConventions conventions, InstallationDirectory install)
+        public FileBasedDefaultsConfiguration(IFileSystem fileSystem, NuConventions conventions, InstallationDirectory install)
             : base(fileSystem, GetMyPath(install, conventions))
         {
         }

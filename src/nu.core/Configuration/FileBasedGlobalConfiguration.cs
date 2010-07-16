@@ -23,7 +23,7 @@ namespace nu.core.Configuration
         readonly NuConventions _conventions;
         readonly ILogger _logger = Logger.GetLogger<FileBasedGlobalConfiguration>();
 
-        public FileBasedGlobalConfiguration(DefaultsConfiguration defaults, FileSystem fileSystem, NuConventions conventions, InstallationDirectory install)
+        public FileBasedGlobalConfiguration(DefaultsConfiguration defaults, IFileSystem fileSystem, NuConventions conventions, InstallationDirectory install)
             : base(fileSystem, PathToMe(install, conventions))
         {
             Defaults = defaults;

@@ -19,12 +19,12 @@ namespace nu.core.Commands
 	public class InitializeCommand :
 		Command
 	{
-		readonly FileSystem _fileSystem;
+		readonly IFileSystem _fileSystem;
 		readonly ILogger _log = Logger.GetLogger<GetGlobalConfigurationCommand>();
 		readonly string _path;
 		readonly bool _create;
 
-		public InitializeCommand(string path, bool create, FileSystem fileSystem)
+		public InitializeCommand(string path, bool create, IFileSystem fileSystem)
 		{
 			_path = path;
 			_create = create;

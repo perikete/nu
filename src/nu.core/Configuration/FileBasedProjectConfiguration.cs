@@ -24,7 +24,7 @@ namespace nu.core.Configuration
 		readonly GlobalConfiguration _globalConfiguration;
 		static readonly ILogger _logger = Logger.GetLogger<FileBasedProjectConfiguration>();
 
-		public FileBasedProjectConfiguration(FileSystem fileSystem, GlobalConfiguration globalConfiguration, NuConventions conventions)
+		public FileBasedProjectConfiguration(IFileSystem fileSystem, GlobalConfiguration globalConfiguration, NuConventions conventions)
 			: base(fileSystem, GetFile(fileSystem, conventions))
 		{
 			_globalConfiguration = globalConfiguration;
@@ -55,7 +55,7 @@ namespace nu.core.Configuration
 			return _globalConfiguration[key];
 		}
 
-		public static File GetFile(FileSystem fileSystem, NuConventions conventions)
+		public static File GetFile(IFileSystem fileSystem, NuConventions conventions)
 		{
 			Directory a = WalkThePathLookingForNu(fileSystem.GetCurrentDirectory(), conventions);
 

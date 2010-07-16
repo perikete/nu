@@ -1,13 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{43E6EB47-708A-4669-893D-80463B8F2A5C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nu.core", "nu.core\nu.core.csproj", "{B106DBF9-AF90-414D-A40C-A0222BF8F5C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nu.Specs", "nu.specs\nu.Specs.csproj", "{7EBF6A88-89C6-46FF-9A2C-B211F0B60C90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nu", "nu\nu.csproj", "{8490969E-9F06-4198-98F9-C89795859C90}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{43E6EB47-708A-4669-893D-80463B8F2A5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nu.extensions.project", "extensions\nu.extensions.project\nu.extensions.project.csproj", "{C47B118E-DEBF-4835-AA94-68BC5CCDA9E8}"
 EndProject

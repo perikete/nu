@@ -24,7 +24,7 @@ namespace nu.core.Configuration
 		bool _touched;
 		protected Func<string, string> OnMissing = DefaultMissingKeyHandler;
 
-		protected FileBasedConfiguration(FileSystem fileSystem, File configurationPath)
+		protected FileBasedConfiguration(IFileSystem fileSystem, File configurationPath)
 		{
 			FileSystem = fileSystem;
 
@@ -58,7 +58,7 @@ namespace nu.core.Configuration
             _touched = true;
         }
 
-		protected FileSystem FileSystem { get; private set; }
+		protected IFileSystem FileSystem { get; private set; }
 
 		Entries Entries { get; set; }
 

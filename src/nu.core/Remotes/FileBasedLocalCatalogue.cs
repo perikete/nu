@@ -20,14 +20,14 @@ namespace nu.core.Remotes
     public class FileBasedLocalCatalogue :
         Catalogue
     {
-        readonly FileSystem _fileSystem;
+        readonly IFileSystem _fileSystem;
         static readonly ILogger _log = Logger.GetLogger<FileBasedLocalCatalogue>();
         File _file;
         bool _disposed;
         bool _touched;
 
 
-        public FileBasedLocalCatalogue(FileSystem fileSystem, InstallationDirectory installLocation)
+        public FileBasedLocalCatalogue(IFileSystem fileSystem, InstallationDirectory installLocation)
         {
             _fileSystem = fileSystem;
             _file = installLocation.GetChildFile("catalogue.json");

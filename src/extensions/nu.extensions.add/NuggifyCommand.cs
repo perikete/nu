@@ -19,12 +19,12 @@ namespace nu.core.Commands
     public class NuggifyCommand :
         Command
     {
-        readonly FileSystem _fileSystem;
+        readonly IFileSystem _fileSystem;
         readonly CurrentWorkingDirectory _current;
         readonly string _name;
         readonly string _version;
 
-        public NuggifyCommand(FileSystem fileSystem, CurrentWorkingDirectory current, string name, string version)
+        public NuggifyCommand(IFileSystem fileSystem, CurrentWorkingDirectory current, string name, string version)
         {
             _fileSystem = fileSystem;
             _current = current;

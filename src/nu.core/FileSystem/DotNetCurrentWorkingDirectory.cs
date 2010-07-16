@@ -4,7 +4,7 @@ namespace nu.core.FileSystem
         DotNetDirectory,
         CurrentWorkingDirectory
     {
-        public DotNetCurrentWorkingDirectory(FileSystem fileSystem)
+        public DotNetCurrentWorkingDirectory(IFileSystem fileSystem)
             : base(fileSystem.GetCurrentDirectory().Name)
         {
         }

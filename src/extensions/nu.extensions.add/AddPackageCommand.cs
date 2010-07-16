@@ -22,7 +22,7 @@ namespace nu.extensions.add
     public class AddPackageCommand :
         Command
     {
-        readonly FileSystem _fileSystem;
+        readonly IFileSystem _fileSystem;
         readonly ILogger _logger = Logger.GetLogger<AddPackageCommand>();
         readonly string _name;
         readonly NugsDirectory _nugsDirectory;
@@ -30,12 +30,12 @@ namespace nu.extensions.add
         readonly string _version;
 
 
-        public AddPackageCommand(string name, NugsDirectory nugsDirectory, ProjectConfiguration projectConfiguration, FileSystem fileSystem)
+        public AddPackageCommand(string name, NugsDirectory nugsDirectory, ProjectConfiguration projectConfiguration, IFileSystem fileSystem)
             : this(name, null, nugsDirectory, projectConfiguration, fileSystem)
         {
         }
 
-        public AddPackageCommand(string name, string version, NugsDirectory nugsDirectory, ProjectConfiguration projectConfiguration, FileSystem fileSystem)
+        public AddPackageCommand(string name, string version, NugsDirectory nugsDirectory, ProjectConfiguration projectConfiguration, IFileSystem fileSystem)
         {
             _name = name;
             _version = version;

@@ -48,7 +48,7 @@ namespace nu
 					x.For<GlobalConfiguration>().Singleton().Use<FileBasedGlobalConfiguration>();
 					x.For<ProjectConfiguration>().Singleton().Use<FileBasedProjectConfiguration>();
 
-					x.For<FileSystem>().Singleton().Use<DotNetFileSystem>();
+					x.For<IFileSystem>().Singleton().Use<DotNetFileSystem>();
 				});
 
 			ScanForExtensions(container);

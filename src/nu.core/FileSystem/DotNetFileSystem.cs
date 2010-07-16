@@ -18,11 +18,11 @@ namespace nu.core.FileSystem
     using Magnum.Logging;
 
     public class DotNetFileSystem :
-        FileSystem
+        IFileSystem
     {
         readonly NuConventions _conventions;
         readonly ILogger _logger = Logger.GetLogger<DotNetFileSystem>();
-
+		
         public DotNetFileSystem(NuConventions conventions)
         {
             _conventions = conventions;
@@ -43,25 +43,6 @@ namespace nu.core.FileSystem
             using (var stream = new FileStream(filePath, FileMode.Open))
             {
                 action(stream);
-            }
-        }
-
-        public void WorkWithTempDir(Action<Directory> tempAction)
-        {
-            string tempDir = Path.Combine(Path.GetTempPath(), "nu");
-            tempDir = Path.Combine(tempDir, Guid.NewGuid().ToString());
-            var d = new DotNetDirectory(DirectoryName.GetDirectoryName(tempDir));
-            if (!d.Exists())
-            {
-                CreateDirectory(d);
-            }
-            try
-            {
-                tempAction(d);
-            }
-            finally
-            {
-                Delete(d);
             }
         }
 
